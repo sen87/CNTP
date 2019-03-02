@@ -1,0 +1,311 @@
+/*
+Title:    Solid
+Author:   sen
+Version:  0.5
+*/
+
+/* Colors
+========================================================================== */
+:root {
+  --color_1: #dddddd;
+  --color_2: #1793d1;
+  --color_2_rgb: 23,147,209;
+  --color_3: #323232;
+  --color_4: #555555;
+  --color_5: #777777;
+}
+
+
+
+/* Body
+========================================================================== */
+body {
+  background: #222222 url(Solid/Stonewashed.jpg); /* https://www.deviantart.com/hotiron/art/Stonewashed-148751009 */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 75%;
+}
+
+#window_tab {
+  border-spacing: 20px 20px;  /* Space between Modules */
+}
+
+/* Mozilla Firefox Fix */
+@-moz-document url-prefix() {
+  #b_frame,
+  #weather_frame,
+  #notes_frame,
+  .feed_frame {
+    height: calc(100% - 52px);
+  }
+}
+
+
+
+/* Scrollbars
+========================================================================== */
+/* Webkit */
+::-webkit-scrollbar {
+  background: transparent;
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: url(Solid/noise_black.png) repeat;
+  border-radius: 8px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 1.0), 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: url(Solid/noise_grey.png) repeat;
+  border-radius: 8px;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 3px rgba( 0, 0, 0, 0.9), 0 0 0 rgba(0, 0, 0, 0.9);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-resizer {
+  background: transparent;
+}
+
+
+/* Firefox*/
+@-moz-document url-prefix() {
+  :root {
+    scrollbar-color: var(--color_5) var(--color_3);
+    scrollbar-width: thin;
+  }
+}
+
+
+
+/* Fonts
+========================================================================== */
+@font-face {
+  font-display: swap;
+  font-family: "DejaVuSans";
+  src: url("../../fonts/DejaVuSans.woff") format("woff"); /* dejavu-fonts.github.io */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "boombox2";
+  src: url("../../fonts/boombox2.ttf") format("truetype");  /* jonathanpaterson.ca/boom.html */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "DigitalReadout";
+  src: url("../../fonts/DigitalReadout.ttf") format("truetype"); /* urbanfonts.com/fonts/Digital_Readout.htm */
+}
+
+* {
+  color: var(--color_1);
+  font-family: "DejaVuSans", sans-serif;
+  font-size: 1em;  
+  text-align: left;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+}
+
+
+
+/* Frames
+========================================================================== */
+/* BORDER */
+#weather,
+#notes,
+#bookmarks,
+.feed_box {
+  padding: 0 10px 10px 10px;
+  border-radius: 8px;
+  background:url(Solid/noise_grey.png) repeat;
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 0 8px rgba(0, 0, 0, 1.0), 0 2px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* TOP */
+.head {
+  background-color: transparent;
+}
+
+/* TOP - TITLE */
+#m_left,
+#m_right,
+#menu,
+h3 {
+  text-rendering: auto;
+  text-align: center;
+  font-family: boombox2;
+  font-weight: bold;
+  color: #222222;
+  text-shadow: 0 2px 3px #686868;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+/* CONTENT */
+#b_frame,
+#weather_frame,
+#notes_frame,
+.feed_frame {
+  padding: 9px 10px 5px 10px;
+  border-radius: 8px 8px;
+  background: url(Solid/raster.png) repeat;
+  background-attachment: local;
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3), inset 0 0 8px rgba(0, 0, 0, 1.0), inset 0 1px 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 1px #000000;
+  border-top: 1px solid #323232;
+}
+
+
+
+/* Feeds
+========================================================================== */
+.feed_entry {
+  color: var(--color_1);
+}
+
+.feed_entry:visited {
+  color: var(--color_5);
+}
+
+.feed_entry p {
+  border-bottom: 2px solid var(--color_3);
+  color: var(--color_2);
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  
+}
+
+.feed_entry:visited p {
+  color: var(--color_4);
+}
+
+.feed_entry:hover {
+  color: #ffffff;
+}
+
+.feed_image {
+  margin-top: 5px;
+}
+
+.feed_image_shadow::before {
+  box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.80);
+}
+
+.feed_image_shadow:hover img {
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.50);
+  filter: brightness(1.2);
+  -webkit-filter: brightness(1.2);
+}
+
+
+
+/* Weather
+========================================================================== */
+#weather_frame:hover td {
+  filter: brightness(1.2);
+  -webkit-filter: brightness(1.2);
+}
+
+h4 {
+  color: var(--color_1);
+  font-family: DigitalReadout;
+  font-size: 4.5em;
+  font-weight: normal;
+  text-shadow: 0 0 10px var(--color_2), 0 0 20px var(--color_2), 0 0 30px var(--color_2), 0 0 40px var(--color_2);
+}
+
+.weather_symbol {
+  color: var(--color_2);
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.weather_forecast_border {
+  stroke: var(--color_1);
+  stroke-width: 2;
+}
+
+#weather_forecast_temperature {
+  fill: none;
+  stroke: var(--color_2);
+  stroke-width: 3;
+}
+
+#weather_forecast_12h {
+  fill: none;
+  stroke: rgba(var(--color_2_rgb),0.50);
+  stroke-width: 1;
+}
+
+#weather_rain_gradient_top {
+  stop-color: rgba(0,0,0,0.1);
+}
+
+#weather_rain_gradient_bottom {
+  stop-color: rgba(100,255,255,0.2);
+}
+
+.weather_forecast_label {
+  fill: var(--color_1);
+  font-size: 14px;
+}
+
+
+
+/* Notes
+========================================================================== */
+#notes_frame a {
+  color: var(--color_2);
+}
+
+#notes_frame a:hover {
+  color: #ffffff;
+}
+
+h1 {
+  background: rgba(0,0,0,0.10);
+  border: 2px solid var(--color_3);
+  border-radius: 8px 8px;
+  color: var(--color_2);
+  font-size: 1.2em;
+  margin-bottom: -8px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+
+
+/* Bookmarks
+========================================================================== */
+#bookmarks a:hover {
+  filter: brightness(2);
+  -webkit-filter: brightness(2);
+}
+
+h2 {
+  border-bottom: 2px solid var(--color_3);
+  color: var(--color_2);
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.space {
+  margin-bottom: 10px;
+}
+
+
+
+/* Panel
+========================================================================== */
+#fs_act {
+  color: var(--color_2);
+}

@@ -1,0 +1,6 @@
+ DejaVuSans         https://dejavu-fonts.github.io
+ boombox            www.jonathanpaterson.ca/boom.html
+ DigitalReadout     www.urbanfonts.com/fonts/Digital_Readout.htm
+ Pacifico           http://fonts.googleapis.com/css?family=Pacifico
+ DroidSans          http://www.droidfonts.com/droidfonts/
+ Notable            https://fonts.google.com/specimen/Notable

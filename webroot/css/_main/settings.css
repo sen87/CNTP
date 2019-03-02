@@ -1,0 +1,464 @@
+@charset "utf-8";
+/*
+Title:    CNTP - Settings
+Author:   sen
+Version:  0.1
+*/
+
+/* Fonts
+========================================================================== */
+@font-face {
+  font-display: swap;
+  font-family: "DejaVuSans";
+  src: url("../../fonts/DejaVuSans.woff") format("woff");   /* dejavu-fonts.github.io */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "boombox2";
+  src: url("../../fonts/boombox2.ttf") format("truetype");  /* jonathanpaterson.ca/boom.html */
+}
+
+
+
+/* Body
+========================================================================== */
+* {
+  color: black;
+  font-family: "DejaVuSans", sans-serif;
+  font-size: 1.0em;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  background:url(../Solid/noise_black.png);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  border: 0;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+
+
+/* Box
+========================================================================== */
+#box {
+  background: linear-gradient(#dcdcdc, #bcbcbc 36px, #aaaaaa);
+  border: 1px solid #222222;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 0 10px rgba(0, 0, 0, 1.0), 0 1px 0 rgba(0, 0, 0, 0.9);
+  margin: auto;
+  padding: 10px;
+  position: relative;
+  top: 40px;
+  height: calc(100% - 100px);
+  width: calc(100% - 100px);
+}
+
+#content {
+  background-color: white;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 6px;
+  border-top: 1px solid #aeaeae;
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3), inset 0 0 8px rgba(0, 0, 0, 1.0), inset 0 1px 1px rgba(0, 0, 0, 0.6);
+  /*line-height: 30px;*/
+  padding: 0 10px 0 10px;
+  text-shadow: 0 1px 1px #bbbbbb;
+  height: calc(100% - 138px);
+  width: calc(100% - 20px);
+}
+
+.tab {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+
+
+/* Tabs Links
+========================================================================== */
+.link {
+  color: #575757;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "boombox2", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  list-style: none;
+  margin-left: 2%;
+  margin-right: 2%;
+  position: relative;
+  right: 80px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  vertical-align: middle;
+}
+
+.active,
+a {
+  color: #1793d1;
+}
+
+
+
+/* Scrollbars
+========================================================================== */
+::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(#cccccc, #bbbbbb);
+  border-radius: 6px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 55px;
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #575757;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3), inset 0 0 3px rgba( 0, 0, 0, 0.9);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-resizer {
+  background: transparent;
+}
+
+
+
+/* Formatting
+========================================================================== */
+hr {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 98%;
+}
+
+.hr_480 {
+  width: 480px;
+}
+
+h1 {
+  font-size: 1.1em;
+}
+
+u {
+  text-decoration: underline;
+}
+
+
+
+/* Input
+========================================================================== */
+input {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(0, 0, 0, 0.8);
+  line-height: 22px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  outline: none;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-top: 4px;
+  text-align: left;
+}
+
+.inp_mail,
+.inp_pwd {
+  width: 350px;
+}
+
+.tab img {
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+input[type=checkbox],
+input[type=radio],
+input[type=range] {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+
+
+/* Button & Select
+========================================================================== */
+button,
+select {
+  background: linear-gradient(#dddddd, #bbbbbb);
+  border-radius: 3px;
+  box-shadow: inset 0 10px 10px rgba(255, 255, 255, 0.6), 0 1px 1px #000000;
+  color: #404040;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 22px;
+  margin: 5px;
+  outline: none;
+  padding: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+
+
+/* Feed
+========================================================================== */
+.inp_feed {
+  width: 500px;
+}
+
+.btn_feed {
+  margin-bottom: 60px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+
+
+
+/* Bookmarks
+========================================================================== */
+#b_box {
+  width: 100%;
+}
+
+.btn_cat_del,
+.btn_b_add,
+.btn_cat_save {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.btn_cat_del {
+  float: left;
+}
+
+.btn_cat_save {
+  float: right;
+}
+
+.btn_b_del {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.b_name {
+  float: left;
+  width: 30%;
+}
+
+.inp_b_name {
+  width: calc(100% - 50px);
+}
+
+.b_url {
+  float: right;
+  width: 70%;
+}
+
+.inp_b_url {
+  width: calc(100% - 100px);
+}
+
+
+
+/* Weather
+========================================================================== */
+#w_place_id {
+  width: 650px;
+}
+
+#w_place_name {
+  width: 350px;
+}
+
+#w_forecast_h {
+  width: 160px;
+}
+
+#weather_icon_prev img {
+  height: auto;
+  width: 175px;
+}
+
+
+/* Layout
+========================================================================== */
+#layout_preview {
+  border-spacing: 4px 4px;
+  border-collapse: separate;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  height: 270px;
+  width: 480px;
+}
+
+#layout_preview td {
+  background-color: #1793d1;
+  border-radius: 3px;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.5);
+}
+
+#layout_preview #weather {
+  background-color: #9acd32;
+}
+
+#layout_preview #notes {
+  background-color: #e6a644;
+}
+
+#layout_preview #bookmarks {
+  background-color: #ee6363;
+}
+
+.color_box  {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
+.B {
+  background: #ee6363;
+}
+
+.N {
+  background: #e6a644;
+  margin-left: 30px;
+}
+
+.W {
+  background: #9acd32;
+  margin-left: 30px;
+}
+
+.F {
+  background: #1793d1;
+  margin-left: 30px;
+}
+
+#layout_column {
+
+}
+#layout_row {
+margin-right: 50px;
+}
+
+#layout_create {
+
+}
+
+.layout_select {
+  width: 125px;
+}
+
+.layout_select:disabled {
+  background: linear-gradient(#ffffff, #dddddd);
+  box-shadow: inset 0 10px 10px rgba(255, 255, 255, 0.6);
+  color: #888888;
+  text-shadow: 0 1px 0 #ffffff;
+}
+
+
+
+/* Theme
+========================================================================== */
+#theme_prev img {
+  border: 1px solid black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  padding: 0;
+}
+
+#ext_css {
+  width: 650px;
+}
+
+#css_imp_box {
+  margin: 0 auto;
+  width: 460px;
+}
+
+.css_imp {
+  text-align: left;
+  color: #ee6363;
+  font-size: 0.8em;
+}
+
+
+
+/* Special Elements
+========================================================================== */
+.disabled {
+  color: #dddddd;
+  background: #222222;
+}
+
+
+
+/* Footer
+========================================================================== */
+#footer {
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow:  0 -2px 2px rgba(0, 0, 0, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: -45px;
+  padding-top: 5px;
+  pointer-events: none;
+  position: absolute;
+  vertical-align: middle;
+  width: calc(100% - 20px);
+  height: 40px;
+  z-index: 100;
+}
+
+#msg {
+  color: white;
+  display: inline-block;
+  font-size: 0.9em;
+  margin-top: 10px;
+  text-shadow: 0 1px 0 #000000;
+}
+
+#ok {
+color: #9acd32;
+}
+
+#warn {
+color: #ee6363;
+}
+
+.btn_left,
+.btn_right {
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: -4px;
+  pointer-events: auto;
+}
+
+.btn_left {
+  float: left;
+}
+
+.btn_right {
+  float: right;
+}

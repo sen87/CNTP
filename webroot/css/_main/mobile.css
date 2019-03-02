@@ -1,0 +1,248 @@
+@charset "utf-8";
+/*
+Title:    StartPage - Mobile Layout
+Author:   sen
+Version:  0.1
+*/
+
+/* Body
+========================================================================== */
+@viewport{
+  height: device-height;
+  width: device-width;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+/* Top
+========================================================================== */
+
+.feed_frame {
+  height: calc(100% - 94px);
+  display: block;
+  margin-top: 22px;
+  overflow-y: scroll;
+  position: relative;
+  width: 100%;
+}
+
+
+
+/* Footer
+========================================================================== */
+.feed_box {
+  height: 72px;
+  text-align: center;
+  line-height: 72px;
+  width: 100%;
+  vertical-align: middle;
+}
+
+#m_buttons {
+  font-size: 3em;
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+}
+
+#m_left,
+#m_right {
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  pointer-events: auto;
+}
+
+#m_left {
+  float: left;
+}
+
+#m_right {
+  float: right
+}
+
+#menu {
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.5em;
+  outline: none;
+  text-align: center;
+  text-align-last: center;
+}
+
+#menu {
+  appearance: none; 
+  color: #000000;
+}
+
+
+
+/* Feeds
+========================================================================== */
+.feed_image {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+.feed_image_shadow {
+  display: block;
+  position: relative;
+}
+
+.feed_image_shadow::before {
+  height: 100%;
+  width: 100%;
+  display: block;
+  content: '';
+  position: absolute;
+}
+
+
+
+/* Weather
+========================================================================== */
+#weather_symbol {
+  right: 0;
+  height: 90%;
+  width: 100%;
+  z-index: -1;
+}
+
+#weather_tbl {
+  height: 100%;
+  width: 100%;
+}
+
+#weather_tbl tr,
+#weather_tbl td {
+  display: inline-block;
+}
+
+h4 {
+  margin-top: -10px;
+}
+
+
+#weather_forecast {
+  text-align: right;
+  width: 100%;
+}
+
+.weather_forecast_label.x {
+  text-anchor: start;
+}
+
+.weather_forecast_label.y {
+  text-anchor: end;
+}
+
+
+
+/* Notes
+========================================================================== */
+#notes .head {
+  cursor: pointer;
+}
+
+#notes_frame {
+  background-color: transparent;
+  word-wrap: break-word;
+}
+
+#notes_frame ol li {
+  list-style-position: inside;
+}
+
+#notes_frame ul li {
+  list-style-position: inside;
+}
+
+
+
+/* Bookmarks
+========================================================================== */
+#b_left,
+#b_right {
+  width: 48%;
+  overflow-x: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  display: inline-block;
+  margin-top: -10px;
+}
+
+#b_left {
+  padding-right: 4%;
+}
+
+
+
+/* Panel
+========================================================================== */
+.user_panel {
+  position: absolute;
+  top:0;
+  z-index: 100;
+}
+
+.user_panel form {
+  display: inline-block;
+}
+
+#user_panel_left {
+  left:0;
+}
+
+#user_panel_center {
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+#edit_notes {
+  pointer-events: auto;
+  display: none;
+}
+
+#user_panel_right {
+  right:0;
+}
+
+.user_panel button {
+  background-color: Transparent;
+  border: none;
+  color: #dddddd;
+  cursor: pointer;
+  font-size: 1.5em;
+  outline: none;
+  overflow: hidden;
+}
+
+#logout:hover {
+  color: #ff0000;
+}
+
+#settings:hover {
+  color: #1793d1;
+}

@@ -1,0 +1,222 @@
+@charset "utf-8";
+/*
+Title:    StartPage - Desktop Layout
+Author:   sen
+Version:  1.2
+*/
+
+/* Body
+========================================================================== */
+@viewport{
+  height: device-height;
+  width: device-width;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;		/* disable Scrollbar */
+}
+
+
+
+/* Table
+========================================================================== */
+
+#window_tab {
+  height: 100%;
+  width: 100%;
+  border-collapse: separate;
+  table-layout: fixed;
+}
+
+#window_tab tr {
+  /*height: 33.33%;     --> index.js */
+  width: 100%;
+}
+
+#window_tab td {
+  height: inherit;
+  width: 100%;
+}
+
+/* Mozilla Firefox Fix */
+@-moz-document url-prefix() {
+  #window_tab td {
+    height: 0;
+  }
+}
+
+
+
+/* Frames
+========================================================================== */
+.head {
+  height: 36px;    /* fixed Size needed for Vertical Scaling */
+  line-height: 36px;
+}
+
+h3 {
+  vertical-align: middle;
+}
+
+#b_frame,
+#weather_frame,
+#notes_frame,
+.feed_frame {
+  height: calc(100% - 36px);
+  width: calc(100% - 20px);
+  display: block;
+  overflow-y: auto;
+}
+
+
+
+/* Feeds
+========================================================================== */
+.feed_image {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+.feed_image_shadow {
+  display: block;
+  position: relative;
+}
+
+.feed_image_shadow::before {
+  height: 100%;
+  width: 100%;
+  display: block;
+  content: '';
+  position: absolute;
+}
+
+
+
+/* Weather
+========================================================================== */
+#weather_symbol {
+  height: auto;
+  width: 100%;
+  z-index: -1;
+}
+
+#weather_tbl {
+  height: 100%;
+  width: 100%;
+}
+
+#weather_tbl td {
+  height: 50%;
+  width: 50%;
+}
+
+h4 {
+  margin-top: -10px;
+}
+
+
+#weather_forecast {
+  width: 100%;
+}
+
+.weather_forecast_label.x {
+  text-anchor: start;
+}
+
+.weather_forecast_label.y {
+  text-anchor: end;
+}
+
+
+
+/* Notes
+========================================================================== */
+#notes .head {
+  cursor: pointer;
+}
+
+#notes_frame {
+  background-color: transparent;
+  resize: none;
+  word-wrap: break-word;
+}
+
+#notes_frame ol li {
+  list-style-position: inside;
+}
+
+#notes_frame ul li {
+  list-style-position: inside;
+}
+
+
+
+/* Bookmarks
+========================================================================== */
+#b_left,
+#b_right {
+  width: 48%;
+  overflow-x: hidden;
+  vertical-align: top;
+  white-space: nowrap;
+  display: inline-block;
+  margin-top: -10px;
+}
+
+#b_left {
+  padding-right: 4%;
+}
+
+
+
+/* Panel
+========================================================================== */
+
+.user_panel {
+  background-color: black;
+  background-color: rgba(0,0,0,0.5);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 1.0);
+  position: absolute;
+  top:0;
+  z-index: 100;
+}
+
+#user_panel_left {
+  left:0;
+}
+
+#user_panel_right {
+  right:0;
+}
+
+.user_panel button {
+  background-color: Transparent;
+  border: none;
+  color: #dddddd;
+  cursor: pointer;
+  font-size: 1.5em;
+  outline: none;
+  overflow: hidden;
+}
+
+.fs:hover {
+  color: #1793d1;
+}
+
+#logout:hover {
+  color: #ff0000;
+}
+
+#settings:hover {
+  color: #1793d1;
+}

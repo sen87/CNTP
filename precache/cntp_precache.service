@@ -1,0 +1,10 @@
+[Unit]
+Description=CNTP - precache feeds for active users
+
+[Service]
+Type=oneshot
+ExecStart=php -f /home/YourUser/CNTP/precache/cntp_precache.php
+User=sen
+Nice=19
+Requires=mariadb.service httpd.service
+After=mariadb.service httpd.service

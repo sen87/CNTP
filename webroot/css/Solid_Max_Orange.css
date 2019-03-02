@@ -1,0 +1,13 @@
+/* 
+Title:    Solid Max Red
+Author:   sen
+*/
+
+@import url("_min_Solid_Max_v0.5.css");
+
+/* Colors
+========================================================================== */
+:root {
+  --color_2: #FF7B00;
+  --color_2_rgb: 255,123,0;
+}

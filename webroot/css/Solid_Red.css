@@ -1,0 +1,17 @@
+/* 
+Title:    Solid Red
+Author:   sen
+*/
+
+@import url("_min_Solid_v0.5.css");
+
+/* Colors
+========================================================================== */
+:root {
+  --color_2: #ee6363;
+  --color_2_rgb: 238,99,99;
+}
+
+body {
+  background: #222222 url(Solid/red.webp); /* https://www.deviantart.com/mauricioestrella/art/Fabric-Stripes-56444659 */
+}

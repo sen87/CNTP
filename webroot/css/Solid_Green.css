@@ -1,0 +1,17 @@
+/* 
+Title:    Solid Green
+Author:   sen
+*/
+
+@import url("_min_Solid_v0.5.css");
+
+/* Colors
+========================================================================== */
+:root {
+  --color_2: #9acd32;
+  --color_2_rgb: 154,205,50;
+}
+
+body {
+  background: #222222 url(Solid/raining.webp); /* https://www.deviantart.com/ipapun/art/Raining-146593618 */
+}

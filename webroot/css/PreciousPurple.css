@@ -1,0 +1,293 @@
+/*
+Title:    PreciousPurple
+Author:   SiCKHEAD
+Version:  0.5
+*/
+
+/* Container
+========================================================================== */
+body {
+  background: #17031e url(PreciousPurple/purple_wood.jpg);   /* Background Image */
+  background-size: 100% 100%;
+  font-size: 75%;
+}
+
+#window_tab {
+  border-spacing: 20px  20px;                   /* Space between Modules */
+}
+
+/* Mozilla Firefox Fix */
+@-moz-document url-prefix() {
+  #b_frame,
+  #weather_frame,
+  #notes_frame,
+  .feed_frame {
+    height: calc(100% - 52px);
+  }
+}
+
+
+
+/* Scrollbars
+========================================================================== */
+::-webkit-scrollbar {
+  background: transparent;
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  /*background:url(Solid_sen/noise_black.png) repeat;*/
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.1), inset 0 0 3px rgba( 0, 0, 0, 0.9), 0 0 3px rgba(255, 255, 255, 0.3);
+  /*background:url(PreciousPurple/abstract_thumb.jpg) repeat;*/
+  background: linear-gradient(rgba(153, 93, 217, 0.7), rgba(127, 0, 255, 0.7), rgba(153, 93, 217, 0.7));
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-resizer {
+  background: transparent;
+}
+
+
+
+/* Fonts
+========================================================================== */
+@font-face {
+  font-display: swap;
+  font-family: "Notable";
+  src: url("../../fonts/Notable.ttf") format("truetype");  /* https://fonts.google.com/specimen/Notable */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "DroidSans";
+  src: url("../../fonts/DroidSans.ttf") format("truetype");   /* http://www.droidfonts.com/droidfonts/ */
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "DigitalReadout";
+  src: url("../../fonts/DigitalReadout.ttf") format("truetype"); /* www.urbanfonts.com/fonts/Digital_Readout.htm */
+}
+
+* {
+  font-family: "DroidSans", sans-serif;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  text-align: left;
+  font-size: 1em;
+  color: #DFC0FF;
+}
+
+
+
+/* Frames
+========================================================================== */
+/* BORDER */
+#weather,
+#notes,
+#bookmarks,
+.feed_box {
+  padding: 0 10px 10px 10px;
+  border-radius: 8px;
+  background:url(PreciousPurple/light-blurs-and-abstract-circles.jpg) repeat 0 200px;
+  background-size: 1024px 1024px;
+  background-repeat: repeat;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 0 8px rgba(0, 0, 0, 1.0), 0 2px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* TOP */
+.head {
+  background-color: transparent;
+}
+
+/* TOP - TITLE */
+#m_left,
+#m_right,
+#menu,
+h3 {
+  text-rendering: auto;
+  text-align: center;
+  font-family: Notable;
+  font-weight: bold;
+  color: #FF00B7;
+  text-shadow: 0 2px 3px #000000;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+/* CONTENT */
+#b_frame,
+#weather_frame,
+#notes_frame,
+.feed_frame {
+  padding: 9px 10px 5px 10px;
+  border-radius: 8px 8px;
+  background:url(PreciousPurple/damask_purple_and_black.jpg) repeat;
+  background-attachment: local;
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3), inset 0 0 8px rgba(0, 0, 0, 1.0), inset 0 1px 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 1px #000000;
+  font-size: 1.1em;
+  border-top: 1px solid #3E2E5C;
+}
+
+
+
+/* RSS
+========================================================================== */
+.feed_entry {
+  color: #CC9BFF;
+}
+
+.feed_entry p {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-size: 0.8em;
+  color: #7F00FF;
+  border-bottom: 2px solid #3E2E5C;
+}
+.feed_entry:visited p {
+  color: #493163;
+}
+
+.feed_entry:visited {
+  color: #493163;
+}
+
+.feed_entry:hover {
+  color: #FF00BB;
+}
+
+.feed_image {
+  margin-top: 5px;
+}
+
+.feed_image_shadow::before {
+  box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.80);	/*image normal*/
+}
+
+.feed_image_shadow:hover img {
+  -webkit-filter: brightness(1.3);		/*image hover*/
+  filter: brightness(1.3);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.50);
+}
+
+
+
+/* Weather
+========================================================================== */
+#weather_frame:hover td {
+  -webkit-filter: brightness(1.3);		/*filter on*/
+  filter: brightness(1.3);
+}
+
+h4 {
+  color: #dddddd;
+  text-shadow: 0 0 10px #7F00FF, 0 0 20px #7F00FF, 0 0 30px #7F00FF, 0 0 40px #7F00FF;
+  font-family: DigitalReadout;
+  font-size: 4.5em;
+  font-weight: normal;
+}
+
+.weather_symbol {
+  color: #7F00FF;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.weather_forecast_border {
+  stroke: #7F00FF;
+  stroke-width: 2;
+}
+
+#weather_forecast_temperature {
+  fill: none;
+  stroke: #FF00B7;
+  stroke-width: 3;
+}
+
+#weather_forecast_12h {
+  fill: none;
+  stroke: rgba(127,0,255,0.4);
+  stroke-width: 1.0;
+}
+
+#weather_rain_gradient_top {
+  stop-color: rgba(0,0,0,0.3);
+}
+
+#weather_rain_gradient_bottom {
+  stop-color: rgba(100,255,255,0.3);
+}
+
+.weather_forecast_label {
+  font-size: 14px;
+  fill: #DFC0FF;
+}
+
+
+
+/* Notes
+========================================================================== */
+#notes_frame a {
+  color: #7F00FF;
+}
+
+#notes_frame a:hover {
+  color: #FF00BB;
+}
+
+h1 {
+  background: rgba(153, 93, 217, 0.9);
+  border: 2px solid #7F00FF;
+  border-radius: 8px 8px;
+  color: var(--color_2);
+  font-size: 1.2em;
+  margin-bottom: -8px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+
+
+/* Bookmarks
+========================================================================== */
+#bookmarks a {
+  color: #DFC0FF;
+}
+
+#bookmarks a:hover {
+  color: #FF00BB;
+  -webkit-filter: brightness(2);	/*filter on*/
+  filter: brightness(2);
+}
+
+h2 {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: #7F00FF;
+  border-bottom: 2px solid #3E2E5C;
+}
+
+.space {
+  margin-bottom: 10px;
+}
+
+
+
+/* Panel
+========================================================================== */
+#fs_act {
+  color: #7F00FF;
+}
