@@ -76,7 +76,7 @@ Version:  0.1
         Speed may vary and (short) downtimes can be expected.
         <hr>
         <a id="mail_admin" href="mailto:"><img src="css/_main/mail.svg" alt="Mail" height="22" width="22">Contact</a><br>
-        <a href="https://github.com/sen87/Chrome-CNTP"><img src="css/_main/gh.ico" alt="GitHub" height="22" width="22">Code on GitHub</a>
+        <a href="https://github.com/sen87/CNTP"><img src="css/_main/gh.ico" alt="GitHub" height="22" width="22">Code on GitHub</a>
     </div>
   </div>
 </body>
