@@ -35,8 +35,8 @@ class db {
     :::::::::::::::::::::::::::::::::::::::::::::::  */
 
   function db_op($sql, $param, $op, $obj) {
-    if ($op === 'write' && $this->user_id === 1) {
-      // write protection --> demo user
+    if ($op === 'write' && $this->user_id === 1 && $obj !== 'weather') {
+      // write protection for demo user excluding weather cache
       return false;
     } else {
       // prepare statement
@@ -390,7 +390,7 @@ class db {
   function post_weather_cache($cache, $timestamp) {
     $sql = 'UPDATE weather SET cache=?, last_updated=? WHERE user_id=?';
     $param = array('sss', $cache, $timestamp, $this->user_id);
-    return $this->db_op($sql, $param, 'write', '');
+    return $this->db_op($sql, $param, 'write', 'weather');
   }
 
   function post_weather_data($place_id, $place, $forecast, $forecast_h, $icons) {
