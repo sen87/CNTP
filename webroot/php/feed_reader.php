@@ -243,9 +243,9 @@ class feed_reader {
 
   function update_feed($feed_id, $feed_name, $feed_url, $feed_web_url, $feed_thumbnails, $out) {
     if (($xml = $this->load_xml($feed_name, $feed_url)) && ($type = $this->feed_type($xml, $feed_name))) {
-      $html = '<div class="head"><a href="' . $feed_web_url. '"><h3>' . $feed_name . '</h3></a></div><div class="feed_frame">';
+      $html = '<div class="head"><a rel="noopener" href="' . $feed_web_url. '"><h3>' . $feed_name . '</h3></a></div><div class="feed_frame">';
       foreach ($type[1] as $item) {
-        $html .= '<a class="feed_entry" target="_blank" rel="noopener noreferrer" href="' . $this->feed_item_link($item, $type[0]) . '">';
+        $html .= '<a class="feed_entry" target="_blank" rel="noopener" href="' . $this->feed_item_link($item, $type[0]) . '">';
         $html .= $this->feed_item_title($item);
         $html .= '<p>' . $this->feed_item_date($item) . $this->feed_item_author($item, $type[0]);
         if ($feed_thumbnails) {

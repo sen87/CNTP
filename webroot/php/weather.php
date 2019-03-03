@@ -147,10 +147,10 @@ class weather {
   function html_out($time, $condition, $symbol, $wind, $rain, $temperature, $pressure, $graph, $temp_min, $temp_max) {
     // head
     // ----
-    $html = '<div class="head"><a href="https://www.yr.no' . $this->place_id . '"><h3>Weather</h3></a></div>';
+    $html = '<div class="head"><a rel="noopener" href="https://www.yr.no' . $this->place_id . '"><h3>Weather</h3></a></div>';
     // current
     // -------
-    $html .= '<div id="weather_frame"><a href="https://www.yr.no' . $this->place_id . '"><table id="weather_tbl"><tr><td>';
+    $html .= '<div id="weather_frame"><a rel="noopener" href="https://www.yr.no' . $this->place_id . '"><table id="weather_tbl"><tr><td>';
     $html .= '<h4>' . $temperature . '&degC</h4>';
     $html .= '<p><span class="weather_symbol">⚑</span> ' . $this->place . '</p>';
     $html .= '<p><span class="weather_symbol">☀</span> ' . $condition . '</p>';

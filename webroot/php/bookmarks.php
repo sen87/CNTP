@@ -141,7 +141,7 @@ class bookmarks {
         $html .= '<p class="space"></p><h2>' . htmlSpecialChars($cat_name) . '</h2>';
       }
       // link
-      $html .= '<a href="' . htmlSpecialChars($url) . '">';
+      $html .= '<a rel="noopener" href="' . htmlSpecialChars($url) . '">';
       // favicon
       if ($favicon_switch) {
         if (!$favicon) {
