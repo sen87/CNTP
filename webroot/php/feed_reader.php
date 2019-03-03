@@ -245,7 +245,7 @@ class feed_reader {
     if (($xml = $this->load_xml($feed_name, $feed_url)) && ($type = $this->feed_type($xml, $feed_name))) {
       $html = '<div class="head"><a href="' . $feed_web_url. '"><h3>' . $feed_name . '</h3></a></div><div class="feed_frame">';
       foreach ($type[1] as $item) {
-        $html .= '<a class="feed_entry" href="' . $this->feed_item_link($item, $type[0]) . '">';
+        $html .= '<a class="feed_entry" target="_blank" rel="noopener noreferrer" href="' . $this->feed_item_link($item, $type[0]) . '">';
         $html .= $this->feed_item_title($item);
         $html .= '<p>' . $this->feed_item_date($item) . $this->feed_item_author($item, $type[0]);
         if ($feed_thumbnails) {
