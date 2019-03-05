@@ -1,6 +1,6 @@
 /*
 CNTP - Settings
-v0.1 sen
+v0.2 sen
 */
 
 /*  :::::::::::::::::::::::::::::::::::::::::::::::
@@ -241,6 +241,12 @@ function cat_save(cat_id) {
     if (!name || !url) {
       document.getElementById('msg').innerHTML = "<b id='warn'>[ERROR]</b> Please fill out all fields!";
     } else {
+      // check if url is starting with http://, https://, or ftp://
+      let url_pattern = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+      if (!url.match(url_pattern)) {
+        // fix url
+        url = 'https://' + url;
+      } 
       let req = xhr('POST', 'php/settings_worker.php');
       req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
       req.onreadystatechange = function() {
