@@ -8,6 +8,18 @@ require(dirname(__FILE__) .'/../../db.php');
 require('bookmarks.php');
 
 /*  :::::::::::::::::::::::::::::::::::::::::::::::
+    :::                Functions                :::
+    :::::::::::::::::::::::::::::::::::::::::::::::  */
+
+function fix_url($url) {
+  if (empty(parse_url($url, PHP_URL_SCHEME))) {
+    return 'https://' . $url;
+  }
+  return $url;
+}
+
+
+/*  :::::::::::::::::::::::::::::::::::::::::::::::
     :::                  Exit                   :::
     :::::::::::::::::::::::::::::::::::::::::::::::  */
 
@@ -84,8 +96,8 @@ else if (isset($_POST['submit_feed'])) {
   // create feed
   $name = $_POST['name'];
   $description = $_POST['description'];
-  $url = $_POST['url'];
-  $website_url = $_POST['website'];
+  $url = fix_url($_POST['url']);
+  $website_url = fix_url($_POST['website']);
   $img = 1;
   if (empty($name) || empty($description) || empty($url) || empty($website_url) || empty($img)) {
     header('Location: /settings.php?tab=feeds?empty');
@@ -126,8 +138,8 @@ else if (isset($_POST['submit_feed_edit']) || isset($_POST['submit_feed_delete']
     $feed_id = $_POST['feed_id'];
     $name = $_POST['name'];
     $description = $_POST['description'];
-    $url = $_POST['url'];
-    $website_url = $_POST['website'];
+    $url = fix_url($_POST['url']);
+    $website_url = fix_url($_POST['website']);
     $img = 1;
     if (empty($name) || empty($description) || empty($url) || empty($website_url) || empty($img)) {
       header('Location: /settings.php?tab=feeds?empty');
@@ -222,7 +234,7 @@ else if (isset($_POST['cat_id']) && isset($_POST['b_id'])
   $cat_id = $_POST['cat_id'];
   $id = $_POST['b_id'];
   $name = $_POST['b_name'];
-  $url = $_POST['b_url'];
+  $url = fix_url($_POST['b_url']);
   // connect to db
   $db = new db;
   $db->db_connect($_SESSION['uid']);
@@ -450,7 +462,7 @@ else if (isset($_POST['submit_delete_user'])) {
 
 
 /*  :::::::::::::::::::::::::::::::::::::::::::::::
-    :::                 Init                  :::
+    :::                  Init                   :::
     :::::::::::::::::::::::::::::::::::::::::::::::  */
 
 else {
