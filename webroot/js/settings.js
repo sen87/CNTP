@@ -1,6 +1,6 @@
 /*
 CNTP - Settings
-v0.2 sen
+v0.3 sen
 */
 
 /*  :::::::::::::::::::::::::::::::::::::::::::::::
@@ -729,7 +729,7 @@ function layout_update_preview(label_toggle) {
   document.getElementById('feed_count').innerHTML = feed_count;
 }
 
-function layout_save(exit) {
+function layout_save() {
   layout_update_preview(0);
   let feed_count = document.getElementById('feed_count').innerHTML;
   let table = document.getElementById('layout_preview');
@@ -751,12 +751,7 @@ function layout_save(exit) {
   req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   req.onreadystatechange = function() {
     if (req.readyState == 4 && req.status == 200) {
-      // change url on response
-      if (exit === 0) {
-        window.location.replace('/settings.php?tab=layout?saved');
-      } else {
-        window.location.replace('/');
-      }
+      window.location.replace('/settings.php?tab=layout?saved');
     }
   };
   req.send('feed_count=' + feed_count + '&table=' + encodeURIComponent(table_html) +
@@ -807,6 +802,5 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('theme_select').addEventListener('click', function() {theme_preview();}, false);
   theme_preview();
   // save
-  document.getElementById('layout_save').addEventListener('click', function() {layout_save(0);}, false);
-  document.getElementById('submit_save').addEventListener('click', function() {layout_save(1);}, false);
+  document.getElementById('layout_save').addEventListener('click', function() {layout_save();}, false);
 });

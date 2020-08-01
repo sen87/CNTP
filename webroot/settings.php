@@ -9,7 +9,7 @@ v0.1 sen
   <meta charset="UTF-8">
   <title>CNTP</title>
   <link rel="stylesheet" href="css/_main/_min_settings_v0.1.css" type="text/css" />
-  <script type="text/javascript" src="js/_min_settings_v0.2.js"></script>
+  <script type="text/javascript" src="js/_min_settings_v0.3.js"></script>
   <link rel="icon" href="favicon/icon16.png" type="image/x-icon" />
 </head>
 <body>
