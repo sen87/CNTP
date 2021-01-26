@@ -2,7 +2,7 @@
 /*
 Title:    StartPage - Desktop Layout
 Author:   sen
-Version:  1.2
+Version:  1.3
 */
 
 /* Body
@@ -71,7 +71,7 @@ h3 {
 #weather_frame,
 #notes_frame,
 .feed_frame {
-  height: calc(100% - 36px);
+  height: calc(100% - 51px);
   width: calc(100% - 20px);
   display: block;
   overflow-y: auto;
@@ -200,7 +200,7 @@ h4 {
 }
 
 .user_panel button {
-  background-color: Transparent;
+  background-color: transparent;
   border: none;
   color: #dddddd;
   cursor: pointer;

@@ -3,13 +3,13 @@
 <!--
 Title:    CNTP
 Author:   sen
-Version:  0.7
+Version:  0.8
 -->
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-  <link id="css_base" rel="stylesheet" href="css/_main/_min_base_v1.2.css" type="text/css" />
+  <link id="css_base" rel="stylesheet" href="css/_main/_min_base_v1.3.css" type="text/css" />
   <?php $init->head(); ?>
   <script type="text/javascript" src="js/_min_index_v0.5.js"></script>
   <link rel="icon" href="favicon/icon16.png" type="image/x-icon" />
