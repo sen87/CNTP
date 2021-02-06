@@ -86,16 +86,20 @@ class bookmarks {
           // favicon found in webroot
         } else {
           // search for favicon in document
-          $doc = new DOMDocument();
-          $doc->strictErrorChecking = false;
-          @$doc->loadHTML(file_get_contents($url), LIBXML_NOCDATA | LIBXML_NOWARNING | LIBXML_NOERROR);
-          foreach ($doc->getElementsByTagName('link') as $link) {
-            $rel = $link->getAttribute('rel');
-            if ($rel === 'shortcut icon' || $rel === 'icon') {
-              if ($data = $this->http_request($url_host . '/' . $link->getAttribute('href'))) {
-              } else if ($data = $this->http_request($url_host . $link->getAttribute('href'))) {
-              } else {$data = $this->http_request($link->getAttribute('href'));}
-              break;
+          if ($page = $this->http_request($url_host)) {
+            $doc = new DOMDocument();
+            $doc->strictErrorChecking = false;
+            $doc->loadHTML(mb_convert_encoding($page, 'HTML-ENTITIES', 'UTF-8'), LIBXML_NOCDATA | LIBXML_NOWARNING | LIBXML_NOERROR);
+            foreach ($doc->getElementsByTagName('link') as $link) {
+              $rel = $link->getAttribute('rel');
+              if ($rel === 'icon' || $rel === 'shortcut icon' || $rel === 'favicon') {
+                if (($data = $this->http_request($url_host . '/' . $link->getAttribute('href')))
+                  || ($data = $this->http_request($url_host . $link->getAttribute('href')))
+                  || ($data = $this->http_request($link->getAttribute('href')))
+                  || ($data = $this->http_request('https:' . $link->getAttribute('href')))) {
+                  break;
+                }
+              }
             }
           }
         }
