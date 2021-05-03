@@ -19,7 +19,7 @@ Features
 
 Live
 ---
-https://cntp.nya.pub
+https://cntp.ovh
 
 Screenshots
 ---
@@ -50,7 +50,7 @@ Here are some required (or recommended) settings in the php.ini:
     sendmail_path = "/usr/bin/msmtp -t"
     session.use_cookies = 1
     session.cookie_lifetime = 2592000
-    
+
 Database:
 - create a user and a new database ([help](https://wiki.archlinux.org/index.php/MariaDB))
 - initialize the db with the provided sql dump --> `cntp_db_dump.sql`
