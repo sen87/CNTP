@@ -19,7 +19,7 @@ Features
 
 Live
 ---
-https://cntp.ovh
+https://cntp.praisethe.net
 
 Screenshots
 ---
